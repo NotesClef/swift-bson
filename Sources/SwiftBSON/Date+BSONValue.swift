@@ -83,7 +83,7 @@ extension Date: BSONValue {
                 ? ExtendedJSONDecoder.extJSONDateFormatterSeconds
                 : ExtendedJSONDecoder.extJSONDateFormatterMilliseconds
             let date = formatter.string(from: self)
-            return ["$date": JSON(.string(date))]
+            return JSON(.string(date))
         } else {
             return self.toCanonicalExtendedJSON()
         }
